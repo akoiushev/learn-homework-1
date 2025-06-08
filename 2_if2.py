@@ -15,12 +15,33 @@
 
 """
 
-def main():
+from pickletools import string1
+
+
+def main(str1, str2):
     """
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
-    
+
+    if (isinstance(str1, str)) and (isinstance(str2, str)):
+        return 0
+    elif (str1 == str2):
+       return 1
+    elif (str1 != str2) and (len(str(str1)) > len(str(str2))):
+        if (str1 != str2) and (str2 == 'learn'):
+           return 3
+        else:
+           return 2
+
 if __name__ == "__main__":
-    main()
+    str1 = input('Введи первую строку: ')
+    str2 = input('Введи вторую строку: ')
+    print(main(str1, str2))
+
+# results = main("Эта функция", "Эта функция") 
+# print(results)
+
+# print(main("Эта функция", 5))
+
+# print(main("Эта функция ", "learn"))
