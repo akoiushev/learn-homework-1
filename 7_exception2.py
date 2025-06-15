@@ -13,11 +13,26 @@
     
 """
 
-def discounted(price, discount, max_discount=20)
+def discounted(price, discount, max_discount=20):
     """
     Замените pass на ваш код
     """
-    pass
+    try:
+        price = float(abs(price))
+        discount = float(abs(discount))
+        max_discount = int(abs(max_discount))
+        if max_discount >= 100:
+            raise ValueError('Слишком большая максимальная скидка')
+        if discount >= max_discount:
+            return price
+        else:
+            return price - (price * discount / 100)
+    except KeyboardInterrupt:
+        print("Операция прервана.")
+    except ValueError:
+        print("Ошибка значения")
+    except TypeError:
+        print("Ошибка типа данных. Введите верные данные")
     
 if __name__ == "__main__":
     print(discounted(100, 2))
@@ -26,3 +41,5 @@ if __name__ == "__main__":
     print(discounted("five", 5))
     print(discounted("сто", "десять"))
     print(discounted(100.0, 5, "10"))
+
+    
