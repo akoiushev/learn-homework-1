@@ -22,7 +22,7 @@ def main():
     # pass
     if user_age <= 6:
         return "Вы ходите в детский сад"
-    elif (user_age > 6) and (user_age < 17):
+    elif 6 < user_age < 17:
       return "Вы ходите в школу"
     else:
       return "Вы работаете"
@@ -30,10 +30,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    results = main()
+    print(results)
 
-results = main()
-print(results)
 
 # Фейковые изменения, сделаны только для того, что бы появилоаьс возможноть создатьи протестировать пулреквест
 # домашку в этой версии надо доделать 
